@@ -5,11 +5,11 @@
 # distribution of this software for license terms.
 TMP="/tmp/i7gh-release.$$"
 trap "rm -rf $TMP" 0 1 2 3 15
-cp -a *Materials/Release $TMP
-[ -d *Materials/Figures ] && cp -a *Materials/Figures $TMP
+cp -a *.materials/Release $TMP
+[ -d *.materials/Figures ] && cp -a *.materials/Figures $TMP
 git checkout gh-pages || exit 1
 git clean -df
-#rm -rf *.inform *Materials
+#rm -rf *.inform *.materials
 cp -a $TMP/. .
 git add .
 MASTER=`git show-ref heads/master | awk '{print $1;}'`

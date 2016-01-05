@@ -22,7 +22,7 @@ cat >.gitignore <<'EOF'
 /.gitignore
 /*.inform/*
 !/*.inform/Source/
-/*\ Materials/Release/
+/*.materials/Release/
 EOF
 git add "$NAME.inform/Source/story.ni"
 git commit -m "$NAME"
